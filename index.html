@@ -4,13 +4,9 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="./css/main.css">
 		<link rel="stylesheet" href="./libs/noUiSlider/nouislider.css">
 		<link rel="shortcut icon" href="./img/ico/favicon.ico" type="image/x-icon">
-
 
 		<title>Онлайн калькулятор ипотеки</title>
 	</head>
@@ -22,33 +18,17 @@
 				<form id="form" class="col-left">
 
 					<div class="programms-wraper">
-
-						<input type="radio" name="program" value="zero" id="zero-value" class="radio-hidden"checked>
-						<label for="zero-value" class="radio-label">Без первоначального взноса - <span id="zero-text">XX</span></label>
-
-						<input type="radio" name="program" value="base" id="base-value" class="radio-hidden" >
-						<label for="base-value" class="radio-label">Базовая ставка - <span id="base-text">XX</span></label>
+						<input type="radio" name="program" value="base" id="base-value" class="radio-hidden" checked>
+						<label for="base-value" class="radio-label">Базовая программа <span id="base-text">XX</span></label>
 
 						<input type="radio" name="program" value="it" id="it-value" class="radio-hidden">
-						<label for="it-value" class="radio-label">Ипотека для IT - <span id="it-text">XX</span></label>
-
-						<input type="radio" name="program" value="family" id="family-value" class="radio-hidden">
-						<label for="family-value" class="radio-label">Семейная - <span id="family-text">XX</span></label>
-
+						<label for="it-value" class="radio-label">Ипотека для IT <span id="it-text">XX</span></label>
 
 						<input type="radio" name="program" value="gov" id="gov-value" class="radio-hidden">
-						<label for="gov-value" class="radio-label">Господдержка - <span id="gov-text">XX</span></label>
+						<label for="gov-value" class="radio-label">Господдержка <span id="gov-text">XX</span></label>
 
-						<input type="radio" name="program" value="cottage" id="cottage-value" class="radio-hidden">
-						<label for="cottage-value" class="radio-label">Ипотека на загородную недвижимость - <span id="cottage-text">XX</span></label>
-
-						<input type="radio" name="program" value="business" id="business-value" class="radio-hidden">
-						<label for="business-value" class="radio-label">Коммерческая недвижимость - <span id="business-text">XX</span></label>
-
-						<input type="radio" name="program" value="forigner" id="forigner-value" class="radio-hidden">
-						<label for="forigner-value" class="radio-label">Для иностранных граждан - <span id="forigner-text">XX</span></label>
-		
-
+						<input type="radio" name="program" value="zero" id="zero-value" class="radio-hidden">
+						<label for="zero-value" class="radio-label">Без первоначального взноса <span id="zero-text">XX</span></label>
 					</div>
 
 					<div class="params-wrapper">
@@ -56,26 +36,26 @@
 						<label class="param">
 							<div class="param__details">
 								<div class="param__title">Стоимость недвижимости</div>
-								<input type="text" class="param__value" value="9300000" inputmode="decimal" id="input-cost">
+								<input type="text" class="param__value" value="" inputmode="decimal" id="input-cost">
 							</div>
 							<div class="param__range-slider" id="slider-cost"></div>
 
 							<div class="param__limits limit">
-								<div class="limit__from">300 тыс.</div>
-								<div class="limit__to">100 мл.</div>
+								<div class="limit__from">375 тыс. Р</div>
+								<div class="limit__50">10 млн Р</div>
+								<div class="limit__to">100 млн Р</div>
 							</div>
-
 						</label>
 
 						<label class="param">
 							<div class="param__details">
 								<div class="param__title">Первоначальный взнос</div>
-								<input type="text" class="param__value" value="375000" id="input-downpayment">
+								<input type="text" class="param__value" value="" id="input-downpayment">
 							</div>
-							<div class="param__range-slider" id="downpayment-slider"></div>
+							<div class="param__range-slider" id="slider-downpayment"></div>
 
 							<div class="param__limits limit">
-								<div class="limit__from">15%</div>
+								<div class="limit__from" id="percents-from">15%</div>
 								<div class="limit__to">90%</div>
 							</div>
 						</label>
@@ -83,7 +63,7 @@
 						<label class="param">
 							<div class="param__details">
 								<div class="param__title">Срок кредита</div>
-								<input type="text" class="param__value" value="10" id="input-term">
+								<input type="text" class="param__value" value="" id="input-term">
 							</div>
 							<div class="param__range-slider" id="slider-term"></div>
 
@@ -115,18 +95,49 @@
 							<div class="summary-item__value" id="total-cost">XXXX</div>
 						</div>
 
+						<div class="summary__item summary-item">
+							<div class="summary-item__title">Переплата</div>
+							<div class="summary-item__value" id="total-overpayment">XXXX</div>
+						</div>
+
 					</div>
+
+					<div class="order-form-wrapper">
+
+						<button class="order-btn" id="openFormBtn" type="button">Оставить заявку</button>
+
+						<form class="order-form none" id="orderForm">
+							<input name="name" value="" type="text" class="order-input" placeholder="Имя, Фамилия" required>
+							<input name="email" value="info@rightblog.ru" type="email" class="order-input" placeholder="Email" required>
+							<input name="phone" value="+79035354858" type="text" class="order-input" placeholder="Телефон" data-tel-input required>
+							<button type="submit" class="order-btn order-btn--black" id="submitFormBtn">Оформить заявку</button>
+						</form>
+
+						<div id="success" class="alert alert--success none" role="alert">
+							<span class="alert__icon">&#128515; &#128077; </span>
+							<span class="alert__text">Заявка отправлена успешно!</span>
+						</div>
+
+						<div id="error" class="alert alert--danger none" role="alert">
+							<span class="alert__icon">&#128580;</span>
+							<span class="alert__text">Что-то пошло не так. <br>Попробуйте еще раз</span>
+						</div>
+
+					</div>
+
+
 
 				</div>
 			</div>
 		</div>
 
+		<!-- Libs -->
 		<script src="./libs/wNumb/wNumb.min.js"></script>
 		<script src="./libs/noUiSlider/nouislider.min.js"></script>
 		<script src="./libs/cleaveJS/cleave.min.js"></script>
+		<script src="./libs/phoneInput/phoneInput.js"></script>
 
-		<script src="./js/Rates.js" type="module"></script>
-		<script src="./js/Formaters.js" type="module"></script>
-		<script src="./js/InputsFormater.js" type="module"></script>
+		<script src="./js/controller.js" type="module" defer></script>
+
     </body>
 </html>
