@@ -121,9 +121,6 @@ function setData(newData) {
         monthPayment,
         overPayment
 	};
-
-	console.log('Updated data', data);
-	console.log('New resulst', results);
 }
 
 export { getData, setData, getResults };
