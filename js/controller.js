@@ -107,11 +107,7 @@ window.onload = function () {
 
 		// Собираем данные с формы перед disable
 		const formData = new FormData(orderForm);
-		console.log(formData);
-		console.log(formData.get('name'));
-		console.log(formData.get('email'));
-		console.log(formData.get('phone'));
-
+		
 		// Disable для кнопоки и инпутов
         submitFormBtn.setAttribute('disabled', true);
         submitFormBtn.innerText = 'Заявка отправляется...'

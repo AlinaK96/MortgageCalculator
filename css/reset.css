@@ -1,4 +1,4 @@
-/* Reset and base styles  */
+/* Обнуление базовых стилей  */
 * {
 	padding: 0px;
 	margin: 0px;
@@ -11,30 +11,16 @@
 	box-sizing: border-box;
 }
 
-:focus,
-:active {
-	/*outline: none;*/
-}
 
-a:focus,
-a:active {
-	/* outline: none;*/
-}
-
-/* Links */
+/* Ссылки */
 
 a, a:link, a:visited  {
-    /* color: inherit; */
     text-decoration: none;
-    /* display: inline-block; */
 }
 
 a:hover  {
-    /* color: inherit; */
     text-decoration: none;
 }
-
-/* Common */
 
 aside, nav, footer, header, section, main {
 	display: block;
@@ -58,7 +44,7 @@ img, svg {
 	height: auto;
 }
 
-/* Form */
+/* Формы */
 
 input, textarea, button, select {
 	font-family: inherit;

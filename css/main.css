@@ -52,7 +52,7 @@ body {
 	text-align: center;
 }
 
-/* Grid */
+/* Сетка grid */
 
 .row {
 	display: flex;
@@ -287,19 +287,16 @@ body {
 	flex-direction: column;
 }
 
+/*Order button*/
+
 .order-btn {
 	display: inline-block;
     padding: 1em 1em;
-
-    /* background-color: #4a9765; */
-    /* background-color: #212121; */
     background-color: transparent;
-	/* border-color: transparent; */
-	border: 1px solid #212121;
+	border: 1px solid var(--mainColor);
     border-radius: 6px;
 
-    /* color: #fff; */
-    color: #000;
+    color: var(--mainColor);
     font-size: 16px;
 	font-weight: 600;
 
@@ -318,7 +315,7 @@ body {
 }
 
 .order-btn--black {
-	background-color: #212121;
+	background-color: var(--mainColor);
     color: #fff;
 }
 
