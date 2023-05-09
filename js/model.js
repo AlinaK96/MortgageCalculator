@@ -41,7 +41,6 @@ function getResults() {
 }
 
 function setData(newData) {
-	console.log('New data', newData);
 
 	if (newData.onUpdate === 'radioProgram') {
 		if (newData.id === 'zero-value') {
