@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="./css/main.css">
 		<link rel="stylesheet" href="./libs/noUiSlider/nouislider.css">
 		<link rel="shortcut icon" href="./img/ico/favicon.ico" type="image/x-icon">
-
+		
 		<title>Онлайн калькулятор ипотеки</title>
 	</head>
 	<body>
@@ -18,17 +18,30 @@
 				<form id="form" class="col-left">
 
 					<div class="programms-wraper">
-						<input type="radio" name="program" value="base" id="base-value" class="radio-hidden" checked>
-						<label for="base-value" class="radio-label">Базовая программа <span id="base-text">XX</span></label>
+						<input type="radio" name="program" value="zero" id="zero-value" class="radio-hidden">
+						<label for="zero-value" class="radio-label">Без первоначального взноса - <span id="zero-text"> </span>%</label>
+
+						<input type="radio" name="program" value="base" id="base-value" class="radio-hidden" checked >
+						<label for="base-value" class="radio-label">Базовая ставка - <span id="base-text">XX </span>%</label>
 
 						<input type="radio" name="program" value="it" id="it-value" class="radio-hidden">
-						<label for="it-value" class="radio-label">Ипотека для IT <span id="it-text">XX</span></label>
+						<label for="it-value" class="radio-label">Ипотека для IT - <span id="it-text">XX </span>%</label>
+
+						<input type="radio" name="program" value="family" id="family-value" class="radio-hidden">
+						<label for="family-value" class="radio-label">Семейная - <span id="family-text">XX </span>%</label>
+
 
 						<input type="radio" name="program" value="gov" id="gov-value" class="radio-hidden">
-						<label for="gov-value" class="radio-label">Господдержка <span id="gov-text">XX</span></label>
+						<label for="gov-value" class="radio-label">Господдержка - <span id="gov-text">XX </span>%</label>
 
-						<input type="radio" name="program" value="zero" id="zero-value" class="radio-hidden">
-						<label for="zero-value" class="radio-label">Без первоначального взноса <span id="zero-text">XX</span></label>
+						<input type="radio" name="program" value="cottage" id="cottage-value" class="radio-hidden">
+						<label for="cottage-value" class="radio-label">Ипотека на загородную недвижимость - <span id="cottage-text">XX </span>%</label>
+
+						<input type="radio" name="program" value="business" id="business-value" class="radio-hidden">
+						<label for="business-value" class="radio-label">Коммерческая недвижимость - <span id="business-text">XX </span>%</label>
+
+						<input type="radio" name="program" value="forigner" id="forigner-value" class="radio-hidden">
+						<label for="forigner-value" class="radio-label">Для иностранных граждан - <span id="forigner-text">XX </span>%</label>
 					</div>
 
 					<div class="params-wrapper">
@@ -137,7 +150,7 @@
 		<script src="./libs/cleaveJS/cleave.min.js"></script>
 		<script src="./libs/phoneInput/phoneInput.js"></script>
 
+		<!-- Scripts -->
 		<script src="./js/controller.js" type="module" defer></script>
-
     </body>
 </html>
